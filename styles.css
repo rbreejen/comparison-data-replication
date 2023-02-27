@@ -1,0 +1,63 @@
+  .comparison {
+    margin: 0 auto;
+    width: 1000px;
+    height: 800px;
+    font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  
+  .comparison-header {
+    margin: 10px 0;
+    font-size: 13px;
+  }
+  
+  .comparison-title {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  
+  .comparison-tbl {
+    font-size: 11px;
+    line-height: 18px;
+  }
+  
+  .comparison-tbl a {
+    color: inherit;
+  }
+  
+  .header {
+    border-bottom: 2px solid #555;
+    font-size: 13px;
+    font-weight: 400;
+  }
+  
+  .header:hover {
+    background-color: #eee;
+  }
+  
+  .bar-cell {
+    display: flex;
+  }
+  
+  .number {
+    font-family: "Fira Mono", Consolas, Monaco, monospace;
+    font-size: 13.5px;
+    white-space: pre;
+  }
+  
+  .bar-chart {
+    flex-grow: 1;
+    margin-left: 6px;
+    height: 14px;
+  }
+  
+  .bar {
+    height: 100%;
+  }
+
+  .rt-td, .rt-th {
+    padding: 2px 8px;
+  }
+
+  .rt-th-content {
+    text-transform: uppercase;    
+  }

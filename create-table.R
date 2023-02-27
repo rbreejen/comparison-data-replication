@@ -1,6 +1,6 @@
 # 1. Load required packages -----------------------------------------------
 
-list.of.packages <- c("reactable", "gh", "data.table", "here", "htmltools", "htmlwidgets", "webshot", "stringr")
+list.of.packages <- c("reactable", "gh", "data.table", "here", "htmltools", "htmlwidgets", "webshot", "stringr", "reactablefmtr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 lapply(list.of.packages, require, character.only = TRUE)
@@ -94,5 +94,11 @@ tbl <- browsable(
 # Saving ------------------------------------------------------------------
 html_file <- "table.html"
 save_html(tbl, file = html_file)
+
+sourceDir <- function (path, pattern = "\\.[rR]$", env = NULL, chdir = TRUE) 
+{
+  files <- sort(dir(path, pattern, full.names = TRUE))
+  lapply(files, source, chdir = chdir)
+}
 #Sys.setenv(OPENSSL_CONF="/dev/null")
 #webshot::webshot(url = html_file, file = "img.pdf", delay = 0.1, vwidth = 1028)

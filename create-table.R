@@ -95,10 +95,5 @@ tbl <- browsable(
 html_file <- "table.html"
 save_html(tbl, file = html_file)
 
-sourceDir <- function (path, pattern = "\\.[rR]$", env = NULL, chdir = TRUE) 
-{
-  files <- sort(dir(path, pattern, full.names = TRUE))
-  lapply(files, source, chdir = chdir)
-}
 #Sys.setenv(OPENSSL_CONF="/dev/null")
 #webshot::webshot(url = html_file, file = "img.pdf", delay = 0.1, vwidth = 1028)

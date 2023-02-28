@@ -1,3 +1,7 @@
+  p {
+  margin: 0;
+  }
+  
   .comparison {
     margin: 0 auto;
     width: 1000px;
@@ -20,9 +24,9 @@
     line-height: 18px;
   }
   
-  .comparison-tbl a {
-    color: inherit;
-  }
+a, a:visited, a:hover, a:active {
+  color: LinkText;
+}
   
   .header {
     border-bottom: 2px solid #555;
@@ -58,6 +62,10 @@
     padding: 2px 8px;
   }
 
+  .rt-td-inner {
+    padding: 3px 8px;
+  }
+  
   .rt-th-content {
     text-transform: uppercase;    
   }

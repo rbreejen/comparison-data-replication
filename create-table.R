@@ -10,12 +10,16 @@ lapply(list.of.packages, require, character.only = TRUE)
 data <- fread(here::here("comparison-data-replication.csv"),quote="")
 
 column_transformer <- function(value) {
-  if (value == "N") {
-    args <- c(list(role = "img", title = value), list("–", style = "color: #666; font-weight: 700"))
-    do.call(span, args)
-  } else if (value == "Y") {
-    args <- c(list(role = "img", title = value), list(shiny::icon("check"), style = "color: green"))
-    do.call(span, args)
+  if (str_detect(value, "%N%")) {
+    markdown::renderMarkdown(stringr::str_replace(value, "%N%", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b33d02ef39b1fc3adfb_icon_x.png' style='width: 25.56px; height: 20.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>"))
+    #args <- c(list(role = "img", title = value), list("–", style = "color: #666; font-weight: 700"))
+    #do.call(span, args)
+  } else if (str_detect(value, "%Y%")) {
+    markdown::renderMarkdown(stringr::str_replace(value, "%Y%", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b327bf0d9337241e112_check.png' style='width: 25.56px; height: 20.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>"))
+    #args <- c(list(role = "img", title = value), list(shiny::icon("check"), style = "color: green"))
+    #do.call(span, args)
+  } else if (str_detect(value, "%U%")) {
+    markdown::renderMarkdown(stringr::str_replace(value, "%U%", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b3276df8460a3e8d91b_output-onlinepngtools.png' style='width: 25.56px; height: 20.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>"))
   } else if (!is.na(as.numeric(value))) {
     span(class = "number", value)
   } else if (str_starts(value, "#")) {

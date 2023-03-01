@@ -45,13 +45,13 @@ tbl <- reactable(data,
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
-              name = "<img alt='' src='https://flink.apache.org/flink-header-logo.svg'<p>CDC</p>"
+              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'<p>+</p><p>Flink CDC</p>"
             ),
             `Debezium` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
-              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'><p>+ Kafka Connect / Debezium server</p>"
+              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'><p>+</p><p> Kafka Connect / Debezium server</p>"
             ),
             `Airbyte` = colDef(
               html=TRUE,

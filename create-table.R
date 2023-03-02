@@ -41,18 +41,24 @@ tbl <- reactable(data,
               minWidth = 180,
               name = ""
             ),
+            `Debezium` = colDef(
+              html=TRUE,
+              align = "center",
+              cell = function(value) column_transformer(value),
+              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'><p>+</p><p> Kafka Connect / Debezium server</p>"
+            ),            
             `Flink` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'<p>+</p><p>Flink CDC</p>"
             ),
-            `Debezium` = colDef(
+            `Alibaba` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
-              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'><p>+</p><p> Kafka Connect / Debezium server</p>"
-            ),
+              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'<p>+</p><p>Flink CDC + Alibaba</p>"
+            ),            
             `Airbyte` = colDef(
               html=TRUE,
               align = "center",

@@ -38,6 +38,7 @@ tbl <- reactable(data,
             item = colDef(
               html = TRUE,
               align = "left",
+              cell = function(value) column_transformer(value),
               minWidth = 180,
               name = ""
             ),

@@ -52,7 +52,7 @@ tbl <- reactable(data,
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
-              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'<p>+</p><p>Flink CDC</p>"
+              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'<p>+</p><p>Flink CDC Datastream API</p>"
             ),
             `Airbyte` = colDef(
               html=TRUE,

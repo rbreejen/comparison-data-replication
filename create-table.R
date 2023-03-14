@@ -59,7 +59,25 @@ tbl <- reactable(data,
               align = "center",
               cell = function(value) column_transformer(value),
               name = "<img alt='' src='https://assets.website-files.com/605e01bc25f7e19a82e74788/624d9c4a375a55100be6b257_Airbyte_logo_color_dark.svg' style='width: 64.50px; height: 49.06px'>"
-            )
+            ),
+            `AWS` = colDef(
+              html=TRUE,
+              align = "center",
+              cell = function(value) column_transformer(value),
+              name = "<img alt='' src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' style='width: 64.50px; height: 49.06px'><p>DMS</p>"
+            ),
+            `Qlik` = colDef(
+              html=TRUE,
+              align = "center",
+              cell = function(value) column_transformer(value),
+              name = "<img alt='' src='https://upload.wikimedia.org/wikipedia/commons/3/32/Qlik_Logo.svg' style='width: 64.50px; height: 49.06px'><p>Replica</p>"
+            ),
+            `Fivetran` = colDef(
+              html=TRUE,
+              align = "center",
+              cell = function(value) column_transformer(value),
+              name = "<img alt='' src='https://assets-global.website-files.com/6130fa1501794ed4d11867ba/63d9599008ad50523f8ce26a_logo.svg' style='width: 64.50px; height: 49.06px'>"
+            )            
           ),
           theme = reactableTheme(
             highlightColor = "#f3fafb",

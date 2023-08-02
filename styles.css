@@ -1,5 +1,6 @@
-  p {
-  margin: 0;
+  *{
+    margin: 0;
+    padding: 0;
   }
   
   .comparison {
@@ -10,8 +11,12 @@
   }
   
   .comparison-header {
-    margin: 10px 0;
     font-size: 13px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: white;
+    padding: 10px;
   }
   
   .comparison-title {
@@ -21,12 +26,7 @@
   
   .comparison-tbl {
     font-size: 11px;
-    
   }
-  
-a, a:visited, a:hover, a:active {
-  color: LinkText;
-}
   
   .header {
     border-bottom: 2px solid #555;

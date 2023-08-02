@@ -26,6 +26,7 @@ column_transformer <- function(value) {
 tbl <- reactable(data, 
                  pagination = FALSE,
                  columnGroups = list(
+                   #colGroup(name = "", columns = c("category", "item"), sticky = "left"),
                    colGroup(name = "Open Source", columns = c("Debezium", "Flink", "Airbyte","Estuary")),
                    colGroup(name = "Cloud Vendor Native Services", columns = c("AWS", "GCP")),
                    colGroup(name = "SAAS Vendors", columns = c("Qlik", "Fivetran","Arcion", "Decodable", "Striim", "StreamSets","Upsolver","Hevo"))

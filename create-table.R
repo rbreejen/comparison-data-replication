@@ -55,7 +55,7 @@ tbl <- reactable(data,
               align = "center",
               cell = function(value) column_transformer(value),
               class = "border-left",
-              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'><p>+</p><p> Kafka Connect</p>"
+              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'>"
             ),            
             `Flink` = colDef(
               html=TRUE,
@@ -160,7 +160,7 @@ tbl <- reactable(data,
 tbl <- div(class = "comparison",
     div(class = "comparison-header",
         h2(class = "comparison-title", "Comparison CDC data replication services"),
-        "Date of comparison: Jul 2023"
+        "Date of comparison: August 2023"
     ),
     tbl
 )

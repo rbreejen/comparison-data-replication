@@ -5,13 +5,13 @@
   
   .comparison {
     margin: 0 auto;
-    width: 1900px;
+    width: 85%;
     height: 800px;
     font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   
   .comparison-header {
-    font-size: 13px;
+    font-size: 11px;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -25,7 +25,7 @@
   }
   
   .comparison-tbl {
-    font-size: 11px;
+    font-size: 10px;
   }
   
   .header {
@@ -40,12 +40,6 @@
     display: flex;
   }
   
-  .number {
-    font-family: "Fira Mono", Consolas, Monaco, monospace;
-    font-size: 13.5px;
-    white-space: pre;
-  }
-  
   .bar-chart {
     flex-grow: 1;
     margin-left: 6px;
@@ -55,13 +49,19 @@
   .bar {
     height: 100%;
   }
-
-  .rt-td, .rt-th {
-    padding: 0px 8px;
+  
+  .rt-th {
+    display: flex;
+    justify-content: center;
+    align-items: bottom; 
   }
 
   .rt-td-inner {
-    padding: 1.5px 8px;
+    padding: 1.5px 4px;
+  }
+  
+  .rt-th-inner {
+    padding: 7px 0px !important;
   }
   
   .rt-th-content {
@@ -73,6 +73,6 @@
   }
   
   .c3 {
-    font-size: 8pt;
+    font-size: 9px !important;
     line-height: 0.9pt;
   }

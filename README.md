@@ -1,7 +1,7 @@
-# comparison-data-replication
+# Comparison of CDC data replication services
 
-![plot](./img.png)
+![plot](./img.png)(https://rbreejen.github.io/comparison-data-replication/table.html)
 
-Work-in-progress
+## Disclaimer
 
-Go to [https://rbreejen.github.io/comparison-data-replication/table.html](https://rbreejen.github.io/comparison-data-replication/table.html) to see an overview all open-source CDC replication tools.
+This research may exhibit errors. Please file a pull request to propose a change.

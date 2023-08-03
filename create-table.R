@@ -179,5 +179,5 @@ tbl <- browsable(
 html_file <- "table.html"
 save_html(tbl, file = html_file)
 
-#Sys.setenv(OPENSSL_CONF="/dev/null")
-#webshot::webshot(url = html_file, file = "img.pdf", delay = 0.1, vwidth = 1028)
+Sys.setenv(OPENSSL_CONF="/dev/null")
+webshot::webshot(url = html_file, file = "img.png", delay = 0.1, vwidth = 1028)

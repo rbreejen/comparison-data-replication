@@ -1,6 +1,6 @@
 # Comparison of CDC data replication services
 
-![plot](./img.png)(https://rbreejen.github.io/comparison-data-replication/table.html)
+[![plot](./img.png)](https://rbreejen.github.io/comparison-data-replication/table.html)
 
 ## Disclaimer
 

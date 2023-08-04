@@ -25,6 +25,7 @@ column_transformer <- function(value) {
 
 tbl <- reactable(data, 
                  pagination = FALSE,
+                 #borderless=T,
                  columnGroups = list(
                    #colGroup(name = "", columns = c("category", "item"), sticky = "left"),
                    colGroup(name = "Open Source", columns = c("Debezium", "Flink", "Airbyte","Estuary")),
@@ -45,10 +46,18 @@ tbl <- reactable(data,
             ),
             item = colDef(
               html = TRUE,
+              name = "",
               align = "left",
-              cell = function(value) column_transformer(value),
+              #resizable = TRUE,
+              cell = function(value, index) {
+                title <- column_transformer(paste0(value, data[index, "description"][[1]]))
+                if (data[index, "is_advanced"][[1]]) {
+                  advanced_tag <- div(style = list(float = "right"), span(class = "tag", "Advanced"))
+                  title <- paste0(title, tagList(advanced_tag))
+                }
+                title
+              },
               minWidth = 180,
-              name = ""
             ),
             `Debezium` = colDef(
               html=TRUE,
@@ -157,7 +166,9 @@ tbl <- reactable(data,
               cell = function(value) column_transformer(value),
               minWidth = 90,
               name = "<img alt='' src='https://lever-client-logos.s3.us-west-2.amazonaws.com/3d73b5a9-c725-424d-962c-495d3d85c72f-1684919086376.png' style='width: 63.75px; height: 21.88px'>"
-            )
+            ),
+            description = colDef(show = FALSE),
+            is_advanced = colDef(show = FALSE)
           ),
           highlight = TRUE,
           theme = reactableTheme(
@@ -174,7 +185,7 @@ tbl <- reactable(data,
 
 tbl <- div(class = "comparison",
     div(class = "comparison-header",
-        h2(class = "comparison-title", "Comparison CDC data replication services"),
+        h2(class = "comparison-title", "Feature comparison log-based CDC data replication services"),
         "Date of comparison: August 2023"
     ),
     tbl

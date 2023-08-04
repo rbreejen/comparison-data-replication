@@ -161,8 +161,8 @@ tbl <- reactable(data,
           ),
           highlight = TRUE,
           theme = reactableTheme(
-            highlightColor = "#f3fafb",
-            borderColor = "hsl(0, 0%, 93%)",
+            #highlightColor = "#f3fafb",
+            #borderColor = "hsl(0, 0%, 93%)",
             #padding = "2px",
             headerStyle = list(borderColor = "hsl(0, 0%, 90%)"),
             # Vertically center cells

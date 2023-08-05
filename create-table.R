@@ -136,14 +136,14 @@ tbl <- reactable(data,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='./logos/decodable.svg' style='width: 83.59px; height: 12.61px'>"
+              name = "<img alt='' src='./assets/images/decodable.svg' style='width: 83.59px; height: 12.61px'>"
             ),
             `Striim` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='./logos/striim.jpg' style='width: 59.97px; height: 22.9px'>"
+              name = "<img alt='' src='./assets/images/striim.jpg' style='width: 59.97px; height: 22.9px'>"
             ),
             `StreamSets` = colDef(
               html=TRUE,
@@ -157,7 +157,7 @@ tbl <- reactable(data,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='./logos/upsolver.svg' style='width: 83.85px; height: 19.97px'>"
+              name = "<img alt='' src='./assets/images/upsolver.svg' style='width: 83.85px; height: 19.97px'>"
               
             ),
             `Hevo` = colDef(
@@ -195,15 +195,15 @@ tbl <- browsable(
   tagList(list(
     tags$head(
       tags$link(href = "https://fonts.googleapis.com/css?family=Karla:400,700|Fira+Mono&display=fallback", rel = "stylesheet"),
-      tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")
+      tags$link(rel = "stylesheet", type = "text/css", href = "./assets/styles/styles.css")
     ),
     tbl
   ))
 )
 
 # Saving ------------------------------------------------------------------
-html_file <- "table.html"
-save_html(tbl, file = html_file)
+html_file <- "www/table.html"
+save_html(tbl, file = html_file, libdir = "lib")
 
 Sys.setenv(OPENSSL_CONF="/dev/null")
-webshot::webshot(url = html_file, file = "img.png", delay = 0.1, vwidth = 2000)
+webshot::webshot(url = html_file, file = "www/assets/images/img.png", delay = 0.1, vwidth = 2000)

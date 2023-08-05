@@ -184,7 +184,7 @@ tbl <- reactable(data,
           class = "comparison-tbl")
 
 tbl <- div(class = "comparison",
-    div(class = "comparison-header",
+    div(class = "comparison-header", id = 'header01',
         h2(class = "comparison-title", "Feature comparison log-based CDC data replication services"),
         "Date of comparison: August 2023"
     ),

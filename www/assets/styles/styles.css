@@ -6,15 +6,14 @@
   .comparison {
     margin: 0 auto;
     width: 85%;
-    height: 800px;
+    height: 100%;
     font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   
   .comparison-header {
     font-size: 11px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    /* position: sticky; */
+    z-index: 2;
     background-color: white;
     padding: 10px;
   }
@@ -80,12 +79,20 @@
   }
   
   .tag {
-    padding:; 0.125rem 0.25rem;
+    /* padding:; 0.125rem 0.25rem; */
     color: hsl(0, 0%, 40%);
     font-size: 0.75rem;
     border: 1px solid hsl(0, 0%, 75%);
     border-radius: 2px;
-    border-color: ;
     text-transform: uppercase;
   }
+  
+  .rt-table {
+    overflow: visible !important;
+  }
+  
+  /* #header01 {
+    top: 0;
+  } */
+
   

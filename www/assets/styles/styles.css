@@ -10,10 +10,9 @@
   
   .comparison-header {
     font-size: 11px;
-    /* position: sticky; */
-    /* z-index: 2;
-    background-color: white; */
-    margin: 10px;
+    position: sticky;
+    z-index: 2;
+    background-color: white;
   }
   
   .comparison-title {
@@ -65,10 +64,17 @@
   
   .rt-table {
     overflow: visible !important;
+    /* overflow-x: scroll; */
+  }
+
+  .rt-thead {
+    top: 48px !important;
   }
   
-  /* #header01 {
+  #header01 {
     top: 0;
-  } */
+  }
+
+  /* body, html { overflow-x: clip; }  */
 
   

@@ -65,28 +65,28 @@ tbl <- reactable(data,
               cell = function(value) column_transformer(value),
               class = "border-left",
               minWidth = 90,
-              name = "<p><div class='highlight-tag'>Best open-source</div><img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg#svgView(viewBox(0, 0, 600, 130))' />"  #"<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'>"
+              name = "<div class='highlight-tag'>Best open-source</div><div class='column-title'>Debezium</div>" #<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg#svgView(viewBox(0, 0, 600, 130))' />
             ),            
             `Flink` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<p><div class='highlight-tag'>Best open-source</div></p><img alt='' src='https://flink.apache.org/img/logo/png/1000/flink_squirrel_1000.png' style='width: 32.0px; height: 32.0px'><p style='padding-top: 3px;'>Flink CDC</p>"
+              name = "<div class='highlight-tag'>Best open-source</div><div class='column-title'><img alt='' src='https://flink.apache.org/img/logo/png/1000/flink_squirrel_1000.png' style='width: 32.0px; height: 32.0px'><p style='padding-top: 3px;'>Flink CDC</p></div>"
             ),
             `Airbyte` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://assets.website-files.com/605e01bc25f7e19a82e74788/624d9c4a375a55100be6b257_Airbyte_logo_color_dark.svg#svgView(viewBox(-20, -50, 500, 200))' style='width: 83.85px; height: 33.54px'>"
+              name = "<div class='column-title'><img alt='' src='https://assets.website-files.com/605e01bc25f7e19a82e74788/624d9c4a375a55100be6b257_Airbyte_logo_color_dark.svg#svgView(viewBox(-20, -50, 500, 200))' style='width: 83.85px; height: 33.54px'></div>"
             ),
             `Estuary` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://docs.estuary.dev/img/estuary-new.png' style='width: 32.0px; height: 32.0px'><p>Estuary</p>"
+              name = "<div class='column-title'><img alt='' src='https://docs.estuary.dev/img/estuary-new.png' style='width: 32.0px; height: 32.0px'><p>Estuary</p></div>"
             ),            
             `AWS` = colDef(
               html=TRUE,
@@ -94,34 +94,34 @@ tbl <- reactable(data,
               cell = function(value) column_transformer(value),
               minWidth = 90,
               class = "border-left",
-              name = "<img alt='' src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' style='width: 48.38px; height: 36.80px'><p>DMS</p>"
+              name = "<div class='column-title'><img alt='' src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' style='width: 48.38px; height: 36.80px'><p>DMS</p></div>"
             ),
             # `Azure` = colDef(
             #   html=TRUE,
             #   align = "center",
             #   cell = function(value) column_transformer(value),
-            #   name = "<img alt='' src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' style='width: 64.50px; height: 49.06px'><p>Data Factory</p>"
+            #   name = "<div class='column-title'><img alt='' src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' style='width: 64.50px; height: 49.06px'><p>Data Factory</p></div>"
             # ),
             `GCP` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://brandeps.com/logo-download/G/Google-Cloud-logo-vector-01.svg' style='width: 48.38px; height: 36.80px'><p>GCP Datastream</p>"
+              name = "<div class='column-title'><img alt='' src='https://brandeps.com/logo-download/G/Google-Cloud-logo-vector-01.svg' style='width: 48.38px; height: 36.80px'><p>GCP Datastream</p></div>"
             ),            
             `Qlik` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://upload.wikimedia.org/wikipedia/commons/3/32/Qlik_Logo.svg' style='width: 56.09px; height: 16.43px'><p>Replica</p>"
+              name = "<div class='column-title'><img alt='' src='https://upload.wikimedia.org/wikipedia/commons/3/32/Qlik_Logo.svg' style='width: 56.09px; height: 16.43px'><p>Replica</p></div>"
             ),
             `Fivetran` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://assets-global.website-files.com/6130fa1501794ed4d11867ba/63d9599008ad50523f8ce26a_logo.svg' style='width: 80.63px; height: 22.40px'>"
+              name = "<div class='column-title'><img alt='' src='https://assets-global.website-files.com/6130fa1501794ed4d11867ba/63d9599008ad50523f8ce26a_logo.svg' style='width: 80.63px; height: 22.40px'></div>"
             ),
             `Arcion` = colDef(
               html=TRUE,
@@ -129,35 +129,35 @@ tbl <- reactable(data,
               cell = function(value) column_transformer(value),
               minWidth = 90,
               class = "border-left",              
-              name = "<p><div class='highlight-tag''>Best commercial</div></p><img alt='' src='https://assets.website-files.com/60ec496582f5cfe61dfe9c82/630b6bf7da07e33466d680f2_arcion-logo.svg' style='width: 77.40px; height: 15.56px'>"
+              name = "<div class='highlight-tag''>Best commercial</div><div class='column-title'><img alt='' src='https://assets.website-files.com/60ec496582f5cfe61dfe9c82/630b6bf7da07e33466d680f2_arcion-logo.svg' style='width: 77.40px; height: 15.56px'></div>"
             ),
             `Decodable` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='./assets/images/decodable.svg' style='width: 83.59px; height: 12.61px'>"
+              name = "<div class='column-title'><img alt='' src='./assets/images/decodable.svg' style='width: 83.59px; height: 12.61px'></div>"
             ),
             `Striim` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='./assets/images/striim.jpg' style='width: 59.97px; height: 22.9px'>"
+              name = "<div class='column-title'><img alt='' src='./assets/images/striim.jpg' style='width: 59.97px; height: 22.9px'></div>"
             ),
             `StreamSets` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://streamsets.b-cdn.net/wp-content/uploads/StreamSets-softwareAG-full-color-crop.svg' style='width: 83.85px; height: 23.66px'>"
+              name = "<div class='column-title'><img alt='' src='https://streamsets.b-cdn.net/wp-content/uploads/StreamSets-softwareAG-full-color-crop.svg' style='width: 83.85px; height: 23.66px'></div>"
             ),
             `Upsolver` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='./assets/images/upsolver.svg' style='width: 83.85px; height: 19.97px'>"
+              name = "<div class='column-title'><img alt='' src='./assets/images/upsolver.svg' style='width: 83.85px; height: 19.97px'></div>"
               
             ),
             `Hevo` = colDef(
@@ -165,7 +165,7 @@ tbl <- reactable(data,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://lever-client-logos.s3.us-west-2.amazonaws.com/3d73b5a9-c725-424d-962c-495d3d85c72f-1684919086376.png' style='width: 63.75px; height: 21.88px'>"
+              name = "<div class='column-title'><img alt='' src='https://lever-client-logos.s3.us-west-2.amazonaws.com/3d73b5a9-c725-424d-962c-495d3d85c72f-1684919086376.png' style='width: 63.75px; height: 21.88px'></div>"
             ),
             description = colDef(show = FALSE),
             is_advanced = colDef(show = FALSE)

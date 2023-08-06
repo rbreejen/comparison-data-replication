@@ -28,7 +28,7 @@ tbl <- reactable(data,
                  #borderless=T,
                  columnGroups = list(
                    #colGroup(name = "", columns = c("category", "item"), sticky = "left"),
-                   colGroup(name = "Open Source", columns = c("Debezium", "Flink", "Airbyte","Estuary")),
+                   colGroup(name = "Open-Source", columns = c("Debezium", "Flink", "Airbyte","Estuary")),
                    colGroup(name = "Cloud Vendor Native Services", columns = c("AWS", "GCP")),
                    colGroup(name = "SAAS Vendors", columns = c("Qlik", "Fivetran","Arcion", "Decodable", "Striim", "StreamSets","Upsolver","Hevo"))
                  ),
@@ -65,14 +65,14 @@ tbl <- reactable(data,
               cell = function(value) column_transformer(value),
               class = "border-left",
               minWidth = 90,
-              name = "<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg#svgView(viewBox(0, 0, 600, 130))' />"  #"<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'>"
+              name = "<p><div class='highlight-tag'>Best open-source</div><img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg#svgView(viewBox(0, 0, 600, 130))' />"  #"<img alt='' src='https://debezium.io/assets/images/color_black_debezium_type_600px.svg'>"
             ),            
             `Flink` = colDef(
               html=TRUE,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<img alt='' src='https://flink.apache.org/img/logo/png/1000/flink_squirrel_1000.png' style='width: 32.0px; height: 32.0px'><p style='padding-top: 3px;'>Flink CDC</p>"
+              name = "<p><div class='highlight-tag'>Best open-source</div></p><img alt='' src='https://flink.apache.org/img/logo/png/1000/flink_squirrel_1000.png' style='width: 32.0px; height: 32.0px'><p style='padding-top: 3px;'>Flink CDC</p>"
             ),
             `Airbyte` = colDef(
               html=TRUE,
@@ -129,7 +129,7 @@ tbl <- reactable(data,
               cell = function(value) column_transformer(value),
               minWidth = 90,
               class = "border-left",              
-              name = "<img alt='' src='https://assets.website-files.com/60ec496582f5cfe61dfe9c82/630b6bf7da07e33466d680f2_arcion-logo.svg' style='width: 77.40px; height: 15.56px'>"
+              name = "<p><div class='highlight-tag''>Best commercial</div></p><img alt='' src='https://assets.website-files.com/60ec496582f5cfe61dfe9c82/630b6bf7da07e33466d680f2_arcion-logo.svg' style='width: 77.40px; height: 15.56px'>"
             ),
             `Decodable` = colDef(
               html=TRUE,

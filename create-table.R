@@ -114,7 +114,7 @@ tbl <- reactable(data,
               align = "center",
               cell = function(value) column_transformer(value),
               minWidth = 90,
-              name = "<div class='column-title'><img alt='' src='https://upload.wikimedia.org/wikipedia/commons/3/32/Qlik_Logo.svg' style='width: 56.09px; height: 16.43px'><p>Replica</p></div>"
+              name = "<div class='column-title'><img alt='' src='https://upload.wikimedia.org/wikipedia/commons/3/32/Qlik_Logo.svg' style='width: 56.09px; height: 16.43px'><p>Replicate</p></div>"
             ),
             `Fivetran` = colDef(
               html=TRUE,

@@ -1,11 +1,12 @@
-  *{
-    margin: 0 auto;
-  }
-  
   .comparison {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 85%;
     font-family: Karla, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
   }
   
   .comparison-header {
@@ -13,11 +14,16 @@
     position: sticky;
     z-index: 2;
     background-color: white;
+    flex-wrap: wrap;
+    /* min-width: 0; */
   }
   
   .comparison-title {
     font-size: 18px;
     font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+    /* flex: 2; */
   }
   
   .comparison-tbl {
@@ -82,6 +88,8 @@
   .rt-text-content {
     /* display: flex !important;
     flex-direction: column; */
+    margin-top: 0;
+    margin-bottom: 0;
     height: 100%;
   }
   
@@ -133,6 +141,21 @@
     color: rgb(36, 36, 76)
   }
 
+  .rt-tr-group {
+    margin: 0 auto;
+  }
   /* body, html { overflow-x: clip; }  */
 
-  
+  .item-content-left {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  body {
+    margin:0;
+  }
+
+  p {
+    margin:0;
+    padding:0;
+  }

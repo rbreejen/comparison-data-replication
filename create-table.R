@@ -10,17 +10,17 @@ lapply(list.of.packages, require, character.only = TRUE)
 data <- fread(here::here("comparison-data-replication.csv"),quote="", header=T)
 
 column_transformer <- function(value) {
+  string <- value
   if (str_detect(value, ":n:")) {
-    markdown::renderMarkdown(stringr::str_replace(value, ":n:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b33d02ef39b1fc3adfb_icon_x.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>"))
+    string <- stringr::str_replace(value, ":n:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b33d02ef39b1fc3adfb_icon_x.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
   } else if (str_detect(value, ":y:")) {
-    markdown::renderMarkdown(stringr::str_replace(value, ":y:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b327bf0d9337241e112_check.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>"))
+    string <- stringr::str_replace(value, ":y:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b327bf0d9337241e112_check.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
   } else if (str_detect(value, ":u:")) {
-    markdown::renderMarkdown(stringr::str_replace(value, ":u:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b3276df8460a3e8d91b_output-onlinepngtools.png' style='width: 20.46px; height: 16.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>"))
-  } else if (!is.na(as.numeric(value))) {
-    span(class = "number", value)
-  } else {
-    markdown::renderMarkdown(value)
+    string <- stringr::str_replace(value, ":u:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b3276df8460a3e8d91b_output-onlinepngtools.png' style='width: 20.46px; height: 16.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
+  # } else if (!is.na(as.numeric(value))) {
+  #   span(class = "number", value)
   }
+  markdown::mark(string)
 }
 
 tbl <- reactable(data, 
@@ -46,7 +46,7 @@ tbl <- reactable(data,
               #resizable = TRUE,
               cell = function(value, index) {
                 # this is ugly but will fix later
-                title <- markdown::renderMarkdown(paste0(value, data[index, "description"][[1]]))
+                title <- column_transformer(paste0(value, data[index, "description"][[1]]))
                 title <- as.character(div(class = "item-content-left", HTML(title)))
                 if (data[index, "is_advanced"][[1]]) {
                   advanced_tag <- div(class = "item-content-right", span(class = "tag", "Advanced"))
@@ -179,7 +179,7 @@ tbl <- reactable(data,
             description = colDef(show = FALSE),
             is_advanced = colDef(show = FALSE)
           ),
-          highlight = TRUE,
+          highlight = F,
           theme = reactableTheme(
             #highlightColor = "#f3fafb",
             #borderColor = "hsl(0, 0%, 93%)",

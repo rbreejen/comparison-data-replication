@@ -12,11 +12,11 @@ data <- fread(here::here("comparison-data-replication.csv"),quote="", header=T)
 column_transformer <- function(value) {
   string <- value
   if (str_detect(value, ":n:")) {
-    string <- stringr::str_replace(value, ":n:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b33d02ef39b1fc3adfb_icon_x.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
+    string <- stringr::str_replace(value, ":n:", "<span><img alt='' src='./assets/icons/icon.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
   } else if (str_detect(value, ":y:")) {
-    string <- stringr::str_replace(value, ":y:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b327bf0d9337241e112_check.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
+    string <- stringr::str_replace(value, ":y:", "<span><img alt='' src='./assets/icons/62fc3b327bf0d9337241e112_check.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
   } else if (str_detect(value, ":u:")) {
-    string <- stringr::str_replace(value, ":u:", "<span><img alt='' src='https://uploads-ssl.webflow.com/61f2440c9fcbc37831846652/62fc3b3276df8460a3e8d91b_output-onlinepngtools.png' style='width: 20.46px; height: 16.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
+    string <- stringr::str_replace(value, ":u:", "<span><img alt='' src='./assets/icons/62fc3b3276df8460a3e8d91b_output-onlinepngtools.png' style='width: 20.46px; height: 16.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
   # } else if (!is.na(as.numeric(value))) {
   #   span(class = "number", value)
   }

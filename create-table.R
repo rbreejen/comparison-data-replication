@@ -191,15 +191,18 @@ tbl <- reactable(data,
           defaultExpanded = T,
           rowStyle = function(index) {
             if (index %in% c(2:9, 15:20, 24:25, 29:35)) list(backgroundColor = "rgb(247, 246, 235)")
-            else if (index %in% c(11:13, 22, 27, 37:45)) list(backgroundColor = "rgb(237, 241, 246)")
+            else if (index %in% c(11:13, 22, 27, 37:49)) list(backgroundColor = "rgb(237, 241, 246)")
           },
           sortable = F,
           class = "comparison-tbl")
 
+#Make sure the locale is set to English
+Sys.setlocale("LC_TIME", "C")
+
 tbl <- div(class = "comparison",
     div(class = "comparison-header", id = 'header01',  tags$br(),
-        h2(class = "comparison-title", "Feature comparison log-based CDC data replication services"),
-        "Date of comparison: August 2023"
+        h2(class = "comparison-title", "Feature comparison CDC data replication services"),
+        paste0("Date of comparison: ", format(Sys.Date(), "%B")," 2023")
     ),
     tbl
 )

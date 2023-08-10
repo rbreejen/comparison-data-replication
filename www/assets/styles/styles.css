@@ -39,7 +39,7 @@
   }
 
   .rt-td-inner {
-    padding: 1.5px 4px;
+    padding: 1.5px 0px;
   }
   
   .rt-th-inner {
@@ -140,6 +140,7 @@
 
   .rt-tr-group {
     margin: 0 auto;
+    width: 100%;
   }
 
   .item-content-left {

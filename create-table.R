@@ -11,14 +11,14 @@ data <- fread(here::here("comparison-data-replication.csv"),quote="", header=T)
 
 column_transformer <- function(value) {
   string <- value
-  if (str_detect(value, ":n:")) {
-    string <- stringr::str_replace(value, ":n:", "<span><img alt='' src='./assets/icons/icon.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
-  } else if (str_detect(value, ":y:")) {
-    string <- stringr::str_replace(value, ":y:", "<span><img alt='' src='./assets/icons/62fc3b327bf0d9337241e112_check.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
-  } else if (str_detect(value, ":u:")) {
-    string <- stringr::str_replace(value, ":u:", "<span><img alt='' src='./assets/icons/62fc3b3276df8460a3e8d91b_output-onlinepngtools.png' style='width: 20.46px; height: 16.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
-  # } else if (!is.na(as.numeric(value))) {
-  #   span(class = "number", value)
+  if (str_detect(string, ":n:")) {
+    string <- stringr::str_replace(string, ":n:", "<span><img alt='' src='./assets/icons/icon.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
+  }
+  if (str_detect(string, ":y:")) {
+    string <- stringr::str_replace(string, ":y:", "<span><img alt='' src='./assets/icons/62fc3b327bf0d9337241e112_check.png' style='width: 16.38px; height: 12.8px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
+  }
+  if (str_detect(string, ":u:")) {
+    string <- stringr::str_replace(string, ":u:", "<span><img alt='' src='./assets/icons/62fc3b3276df8460a3e8d91b_output-onlinepngtools.png' style='width: 20.46px; height: 16.00px; margin-left: 0.00px; margin-top: 0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);' title=''></i></span>")
   }
   markdown::mark(string)
 }
@@ -190,8 +190,8 @@ tbl <- reactable(data,
           ),
           defaultExpanded = T,
           rowStyle = function(index) {
-            if (index %in% c(2:11, 17:22, 26:27, 31:37)) list(backgroundColor = "rgb(247, 246, 235)")
-            else if (index %in% c(13:15, 24, 29, 39:51)) list(backgroundColor = "rgb(237, 241, 246)")
+            if (index %in% c(2:11, 22:26, 30:31, 35:41)) list(backgroundColor = "rgb(247, 246, 235)")
+            else if (index %in% c(13:20, 28, 33, 43:55)) list(backgroundColor = "rgb(237, 241, 246)")
           },
           sortable = F,
           class = "comparison-tbl")
